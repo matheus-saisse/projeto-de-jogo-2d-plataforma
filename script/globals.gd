@@ -17,6 +17,17 @@ var hits: int = 10
 # tempo
 var time_left: float = 300.0
 
+var player = null
+
+var current_checkpoint = null
+
+var temp_position = null
+
+func respawn_player():
+	if current_checkpoint != null:
+		player.global_position = current_checkpoint.global_position
+	elif temp_position != null:
+		player.global_position = temp_position.global_position
 
 func _process(delta):
 	if time_left > 0:

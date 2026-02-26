@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://biou2xtwmqg6b" path="res://entitys/bear.tscn" id="26_ovcmj"]
 [ext_resource type="PackedScene" uid="uid://bm66aq5ihb3cl" path="res://scene/pause_menu.tscn" id="28_4h4s8"]
 [ext_resource type="PackedScene" uid="uid://b1opve6glfmpi" path="res://entitys/fairy.tscn" id="29_u8qwh"]
+[ext_resource type="PackedScene" uid="uid://cedd3ai7n3dt" path="res://entitys/checkpoint.tscn" id="30_ljjne"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ytc0w"]
 animations = [{
@@ -60,6 +61,12 @@ position = Vector2(71, 175)
 
 [node name="skl" parent="." unique_id=1279091034 instance=ExtResource("11_t8vtq")]
 position = Vector2(300, 125)
+
+[node name="bear" parent="." unique_id=516483833 instance=ExtResource("26_ovcmj")]
+position = Vector2(127, 170)
+
+[node name="fairy" parent="." unique_id=123522386 instance=ExtResource("29_u8qwh")]
+position = Vector2(277, 80)
 
 [node name="hud" parent="." unique_id=683978627 instance=ExtResource("3_kjkl5")]
 
@@ -255,14 +262,15 @@ volume_db = -32.165
 pitch_scale = 1.66
 autoplay = true
 
-[node name="bear" parent="." unique_id=516483833 instance=ExtResource("26_ovcmj")]
-position = Vector2(127, 170)
-
 [node name="pause_menu" parent="." unique_id=1487629786 instance=ExtResource("28_4h4s8")]
 visible = false
 
-[node name="fairy" parent="." unique_id=123522386 instance=ExtResource("29_u8qwh")]
-position = Vector2(277, 80)
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1691438581]
+position = Vector2(191, 186)
+
+[node name="checkpoint" parent="." unique_id=1640780666 instance=ExtResource("30_ljjne")]
+z_index = 1
+position = Vector2(193, 180)
 
 [editable path="mapa/level end"]
 [editable path="assests_mapa/moving_plataform"]

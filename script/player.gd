@@ -74,6 +74,7 @@ var jump_count = 0
 
 #func que starta o jogo		
 func _ready() -> void:
+	add_to_group("player")
 	mana = max_mana
 	emit_signal("mana_changed", mana, max_mana)
 	regen_mana.timeout.connect(mana_regen)
@@ -196,8 +197,6 @@ func go_to_dead_state():
 	set_small_collider() 
 	reload_timer.start()
 	
-	await anim.animation_finished
-	get_tree().change_scene_to_file("res://scene/gameover.tscn")
 	
 func go_to_attack_state():
 	#seleciona se o attack ser ano chao ou se sera no jump
@@ -603,7 +602,10 @@ func hit_lethal_area():
 
 #func reset fase
 func _on_reload_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+	Globals.hearts = Globals.max_hearts
+	Globals.hits = Globals.max_hits_per_heart
+	Globals.respawn_player()
+	go_to_idle_state()
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body.is_in_group("water"):

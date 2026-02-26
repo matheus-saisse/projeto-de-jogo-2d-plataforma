@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cedd3ai7n3dt"]
+
+[ext_resource type="Script" uid="uid://dyjfdj01tcgrn" path="res://script/area_2d.gd" id="1_l2v7k"]
+[ext_resource type="Texture2D" uid="uid://1f5q4j6j25ab" path="res://sprites/Mini FX, Items & UI/checkpoint.png" id="2_f0dmj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75gy4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75gy4"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(0, 0, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee2ba"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(18, 0, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsw6i"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(36, 0, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pqel"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(54, 0, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ood5"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(72, 0, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn6hc"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(90, 0, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi7ut"]
+atlas = ExtResource("2_f0dmj")
+region = Rect2(108, 0, 18, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ee2ba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75gy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee2ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pqel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ood5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn6hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi7ut")
+}],
+"loop": true,
+"name": &"checkpoint",
+"speed": 5.0
+}]
+
+[node name="checkpoint" type="Node2D" unique_id=1640780666]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=241629374]
+script = ExtResource("1_l2v7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=410070800]
+shape = SubResource("CircleShape2D_75gy4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1582509319]
+sprite_frames = SubResource("SpriteFrames_ee2ba")
+animation = &"checkpoint"
+frame_progress = 0.70547193
